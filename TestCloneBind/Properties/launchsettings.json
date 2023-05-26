@@ -1,0 +1,10 @@
+﻿{
+    "profiles": {
+      "TestCloneBind (Package)": {
+        "commandName": "MsixPackage"
+      },
+      "TestCloneBind (Unpackaged)": {
+        "commandName": "Project"
+      }
+    }
+}
