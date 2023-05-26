@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <StackPanel >
-        <TextBlock Text="" />
+        <TextBlock Text="Changes made to the cloned instance, not the bound instance, will be reflected." />
         <Button Content="Random" Command="{x:Bind ViewModel.ButtonRandomClickedCommand}" />
         <TextBox Text="{x:Bind ViewModel.ValueContainer.Value, Mode=OneWay}" />
     </StackPanel>

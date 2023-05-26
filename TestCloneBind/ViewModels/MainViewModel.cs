@@ -24,6 +24,7 @@ public partial class MainViewModel : ObservableRecipient
 
     private void ButtonRandomClicked()
     {
+        // Changes made to the cloned instance, not the bound instance, will be reflected to TextBox.
         ValueContainer clone = ValueContainer.Clone();
         clone.Value = (Int32)Random.Shared.NextInt64();
         Debug.WriteLine("orig: " + ValueContainer.Value);
