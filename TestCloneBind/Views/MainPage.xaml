@@ -7,20 +7,10 @@
     Background="{ThemeResource SolidBackgroundFillColorBaseBrush}"
     mc:Ignorable="d">
 
-    <Grid x:Name="ContentArea">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="48" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+    <StackPanel >
+        <TextBox Text="{x:Bind ViewModel.ValueContainer.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <Button Content="Increment" Command="{x:Bind ViewModel.ButtonIncrementClickedCommand}" />
+    </StackPanel>
 
-        <TextBlock
-            Grid.Row="0"
-            x:Uid="Main_Title"
-            Style="{StaticResource PageTitleStyle}" />
-
-        <Grid Grid.Row="1">
-            
-        </Grid>
-        
-    </Grid>
+    
 </Page>
