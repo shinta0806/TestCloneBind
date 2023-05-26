@@ -15,4 +15,9 @@ public class ValueContainer : ObservableObject
         get => _value;
         set => SetProperty(ref _value, value);
     }
+
+    public ValueContainer Clone()
+    {
+        return (ValueContainer)MemberwiseClone();
+    }
 }

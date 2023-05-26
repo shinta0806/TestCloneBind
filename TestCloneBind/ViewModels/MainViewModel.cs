@@ -1,4 +1,5 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using System.Diagnostics;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using TestCloneBind.Models;
 
@@ -8,22 +9,24 @@ public partial class MainViewModel : ObservableRecipient
 {
     public MainViewModel()
     {
-        ButtonIncrementClickedCommand = new RelayCommand(ButtonIncrementClicked);
+        ButtonRandomClickedCommand = new RelayCommand(ButtonRandomClicked);
     }
 
     public ValueContainer ValueContainer
     {
         get;
-        set;
     } = new();
 
-    public RelayCommand ButtonIncrementClickedCommand
+    public RelayCommand ButtonRandomClickedCommand
     {
         get;
     }
 
-    private void ButtonIncrementClicked()
+    private void ButtonRandomClicked()
     {
-        ValueContainer.Value++;
+        ValueContainer clone = ValueContainer.Clone();
+        clone.Value = (Int32)Random.Shared.NextInt64();
+        Debug.WriteLine("orig: " + ValueContainer.Value);
+        Debug.WriteLine("clone: " + clone.Value);
     }
 }
