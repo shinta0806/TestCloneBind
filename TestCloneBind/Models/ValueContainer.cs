@@ -13,6 +13,9 @@ public class ValueContainer : ObservableObject
 
     public ValueContainer Clone()
     {
-        return (ValueContainer)MemberwiseClone();
+        // Solved: Cannot use MemberwiseClone() because it copies ObservableObject's events.
+        ValueContainer clone = new();
+        clone.Value = _value;
+        return clone;
     }
 }
